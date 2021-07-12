@@ -1,5 +1,7 @@
+
 import math
 from sympy import sieve
+import numpy as np
 
 def diagonal_test(P,N,Q,k):
 	diagonal = [] 
@@ -23,18 +25,15 @@ def create_Q(P,N):
 
 k = 3
 n = 2**k
-N = []
+N = np.random.permutation(n) 
 P = []
 
 for i in range(n):
 	P.append(sieve[i+1])
 
-for i in range(n//2):
-	N.append(n//2 + i*(-1))
-	N.append(n//2 + i +1)
 
-#for i in range(n):
-#	N.append(i+1)
+for i in range(n):
+	N[i] += 1
 
 Q = create_Q(P,N)
 print(max(Q)+max(P))

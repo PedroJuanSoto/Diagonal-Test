@@ -1,5 +1,4 @@
 import math
-from sympy import sieve
 
 def diagonal_test(P,N,Q,k):
 	diagonal = [] 
@@ -21,13 +20,13 @@ def create_Q(P,N):
 	return Q
 
 
-k = 3
+k = 6
 n = 2**k
 N = []
-P = []
+P = [1,1]
 
-for i in range(n):
-	P.append(sieve[i+1])
+for i in range(2,n):
+	P.append(P[i-1] + P[i-2])
 
 for i in range(n//2):
 	N.append(n//2 + i*(-1))

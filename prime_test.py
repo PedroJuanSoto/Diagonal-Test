@@ -1,3 +1,4 @@
+
 import math
 from sympy import sieve
 
@@ -21,7 +22,7 @@ def create_Q(P,N):
 	return Q
 
 
-k = 3
+k = 8
 n = 2**k
 N = []
 P = []
@@ -29,12 +30,9 @@ P = []
 for i in range(n):
 	P.append(sieve[i+1])
 
-for i in range(n//2):
-	N.append(n//2 + i*(-1))
-	N.append(n//2 + i +1)
 
-#for i in range(n):
-#	N.append(i+1)
+for i in range(n):
+	N.append(i+1)
 
 Q = create_Q(P,N)
 print(max(Q)+max(P))
