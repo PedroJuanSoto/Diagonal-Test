@@ -1,4 +1,4 @@
-
+import sys
 import math
 
 def diagonal_test(P, k, diagonal):
@@ -19,7 +19,8 @@ def create_table(n):
 		k +=1
 	return P
 
-n = 2**10
+k = int(sys.argv[1])
+n = 2**k
 P = create_table(n)
 print(2*P[n-1])
 print(3**math.log(n,2))
