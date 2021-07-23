@@ -56,8 +56,11 @@ elif sys.argv[3] == "mults":
 elif sys.argv[3] == "random":
 	P = p_types.create_P_random(n,int(sys.argv[4]))
 
+if sys.argv[5] == "permute_P":
+	P = p_types.permute_P(P)
+
 Q = create_Q(P,N)
 print(max(Q)+max(P))
 print(benchmark(n))
-#print(N)
-#print(P,Q)
+print(N)
+print(P,Q)

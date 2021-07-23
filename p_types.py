@@ -33,6 +33,3 @@ def permute_P(P):
 	return new_P
 
 
-P = create_P_prime(9)
-P = permute_P(P)
-print(P)
