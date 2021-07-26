@@ -19,8 +19,8 @@ def create_table(n):
 		k +=1
 	return P
 
-k = int(sys.argv[1])
-n = 2**k
+n = int(sys.argv[1])
 P = create_table(n)
-print(2*P[n-1])
+print(2*P[n-1]+1)
 print(3**math.log(n,2))
+print(P)
