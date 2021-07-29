@@ -46,12 +46,14 @@ def gen_arith_prog(n,b,D,L):
 		for j in range(L[i]):
 			for l in new_list:
 				P_set.add(l+j*D[i])
-	P = list(P_set)
-	P.sort
+	P = []
+	for p in P_set:
+		P.append(p)
+	P.sort()
+	print(P)
 	P = P[:n]
 	return P
 	
 
 
-print(gen_arith_prog(8,5,[2,3],[4,5]))
 
