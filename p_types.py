@@ -50,7 +50,6 @@ def gen_arith_prog(n,b,D,L):
 	for p in P_set:
 		P.append(p)
 	P.sort()
-	print(P)
 	P = P[:n]
 	return P
 	

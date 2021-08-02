@@ -19,10 +19,10 @@ def create_Q(P,N):
 	while len(Q) < n:
 		if diagonal_test(P,N,Q,k,diagonal,non_rooks) == True:
 			diagonal.add(P[N[len(Q)]-1] + k)
-			for i in range(N[len(Q)]):
-				non_rooks.add(P[N[i]-1] + k)
-			for i in range(N[len(Q)]+1,len(P)):
-				non_rooks.add(P[N[i]-1] + k)
+			for i in range(N[len(Q)]-1):
+				non_rooks.add(P[i] + k)
+			for i in range(N[len(Q)],len(P)):
+				non_rooks.add(P[i] + k)
 			Q.append(k)
 		k +=1
 	return Q
