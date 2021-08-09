@@ -19,7 +19,3 @@ print("N = ", N)
 for x in table:
 	print(x)
 
-
-
-
-
