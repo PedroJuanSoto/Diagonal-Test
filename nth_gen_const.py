@@ -50,7 +50,7 @@ def create_P_arith_prog(n):
 	D.pop()
 	return D, L
 	
-n = 18 
+n = 12
 D, L = create_P_arith_prog(n)
 print(D,L)
 P = gen_arith_prog(n,0,D,L)
