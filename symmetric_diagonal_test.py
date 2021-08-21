@@ -1,5 +1,7 @@
 import sys
 import math
+from npq_test import npq_test
+from npq_printer import npq_printer
 
 def diagonal_test(P, k, diagonal):
 	for p in P:
@@ -21,6 +23,10 @@ def create_table(n):
 
 n = int(sys.argv[1])
 P = create_table(n)
-print(2*P[n-1]+1)
-print(3**math.log(n,2))
+M = []
+for i in range(n):
+	M.append(i+1)
+count, test = npq_test(M,M,P,P)
+print(count)
+print(test)
 print(P)

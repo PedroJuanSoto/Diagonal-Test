@@ -1,6 +1,7 @@
 import math
 from sympy import sieve
 from sympy import factorint 
+import numpy as np
 
 def diagonal_test(P,N,Q,k,diagonal,non_rooks):
 	for p in P:
@@ -25,7 +26,24 @@ def create_Q(P,N):
 				non_rooks.add(P[i] + k)
 			Q.append(k)
 		k +=1
-	return Q
+	return len(diagonal)+len(non_rooks), Q
+
+def create_Q_less_greedy(P,N,q_step):
+	Q = []
+	k = 0
+	n = len(P)
+	diagonal = set()
+	non_rooks = set()
+	while len(Q) < n:
+		if diagonal_test(P,N,Q,k,diagonal,non_rooks) == True:
+			diagonal.add(P[N[len(Q)]-1] + k)
+			for i in range(N[len(Q)]-1):
+				non_rooks.add(P[i] + k)
+			for i in range(N[len(Q)],len(P)):
+				non_rooks.add(P[i] + k)
+			Q.append(k)
+		k += np.random.randint(1,q_step)
+	return len(diagonal)+len(non_rooks), Q
 
 def benchmark(n):
 	factors = factorint(n)

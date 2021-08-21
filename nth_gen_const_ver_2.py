@@ -86,7 +86,8 @@ N = create_N_zig_zag_general(n)
 M = []
 for i in range(n):
 	M.append(i+1)
-print(npq_test(M,N,P,Q))
-print(max(P)+max(Q)+1)
+count, test = npq_test(M,N,P,Q)
+print(count)
+print(test)
 print(benchmark(n))
 npq_printer(M,N,P,Q)

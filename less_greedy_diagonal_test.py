@@ -1,5 +1,5 @@
 
-from q_type import diagonal_test, create_Q, benchmark
+from q_type import diagonal_test, create_Q_less_greedy, benchmark
 import n_types
 import p_types
 import sys
@@ -8,8 +8,7 @@ import numpy as np
 from sympy import sieve
 
 
-k = int(sys.argv[1])
-n = 2**k
+n = int(sys.argv[1])
 q_step = int(sys.argv[5])
 
 if sys.argv[2] == "diagonal":
@@ -26,8 +25,8 @@ elif sys.argv[3] == "mults":
 elif sys.argv[3] == "random":
 	P = p_types.create_P_random(n,int(sys.argv[4]))
 
-Q = create_Q(P,N,q_step)
-print(max(Q)+max(P))
-print(3**math.log(n,2))
-#print(N)
-#print(P,Q)
+count, Q = create_Q_less_greedy(P,N,q_step)
+print(count)
+print(benchmark(n))
+print(N)
+print(P,Q)

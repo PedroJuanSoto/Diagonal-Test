@@ -28,8 +28,8 @@ elif sys.argv[3] == "random":
 if sys.argv[5] == "permute_P":
 	P = p_types.permute_P(P)
 
-Q = create_Q(P,N)
-print(max(Q)+max(P)+1)
+count, Q = create_Q(P,N)
+print(count)
 print(benchmark(n))
 print(N)
 print(P,Q)

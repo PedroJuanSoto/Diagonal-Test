@@ -52,14 +52,20 @@ def power_two_test(S):
 
 def base_three_recovery(S):
 	n = 0 
+	found_one = False
+	index = 0
 	for i,s in enumerate(S):
-		n+= s*3**i
-	if power_two_test(S) == True:
-		return n 
-	return 2*n+1
+		if s != 0 and found_one == False:
+			n+= S[i]*3**i
+			found_one = True
+			index = i
+	for i,s in enumerate(S):
+		if i > index:
+			n+= 2*S[i]*3**i
+	return n 
 
 
-N = 10
+N = 20
 S = [0]
 
 for i in range(N):

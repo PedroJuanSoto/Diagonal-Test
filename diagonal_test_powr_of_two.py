@@ -24,8 +24,8 @@ elif sys.argv[3] == "mults":
 elif sys.argv[3] == "random":
 	P = p_types.create_P_random(n,int(sys.argv[4]))
 
-Q = create_Q(P,N)
-print(max(Q)+max(P)+1)
+count, Q = create_Q(P,N)
+print(count)
 print(3**math.log(n,2))
 #print(N)
 #print(P,Q)

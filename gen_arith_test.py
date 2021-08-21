@@ -4,7 +4,7 @@ from p_types import gen_arith_prog
 
 n =  23
 b = 0
-D = [2,7,17,33,61]
+D = [2,7,17,37,83]
 L = [2,2,2,2,2]
 
 N = create_N_zig_zag(n)
@@ -13,8 +13,8 @@ N = create_N_zig_zag(n)
 #N = create_N_zig_zag_general(n)
 P = gen_arith_prog(n,b,D,L)
 
-Q = create_Q(P,N)
-print(max(Q)+max(P)+1)
+count, Q = create_Q(P,N)
+print(count)
 print(benchmark(n))
 print(N)
 print(P,Q)
