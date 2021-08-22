@@ -3,7 +3,7 @@ from q_type import diagonal_test, create_Q, benchmark
 from n_types import create_N_zig_zag, create_N_random, create_N_diagonal, create_N_zig_zag_general
 from p_types import gen_arith_prog
 from sympy import factorint 
-from npq_test import npq_test
+from npq_test import npq_test_and_count
 from npq_printer import npq_printer
 
 
@@ -61,7 +61,7 @@ if want_print == True:
 P = gen_arith_prog(n,0,D,L)
 if want_print == True:
 	print(P)
-Q = create_Q(P,N)
+count, Q = create_Q(P,N)
 if want_print == True:
 	print(N)
 if want_print == True:
@@ -70,8 +70,11 @@ M = []
 for i in range(n):
 	M.append(i+1)
 
-count, test = npq_test(M,N,P,Q)
-print(count)
+count2, test = npq_test_and_count(M,N,P,Q)
+if count == count2:
+	print(count)
+else:
+	print("count error")
 print(test)
 print(benchmark(n))
 if want_print == True:

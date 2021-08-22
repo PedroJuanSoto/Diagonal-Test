@@ -1,4 +1,5 @@
 
+
 from q_type import benchmark
 from npq_printer import npq_printer
 
@@ -24,9 +25,9 @@ def npq_test_and_count(M,N,P,Q):
 
 n = 5
 
-N = [1,5,2,4,3]
-P = [0,4,7,5,1]
-Q = [0,2,4,5,11]
+N = [3,5,2,4,1]
+P = [0,2,3,4,6]
+Q = [0,3,6,11,12]
 M = []
 for i in range(n):
 	M.append(i+1)
