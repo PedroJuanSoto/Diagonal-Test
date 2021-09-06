@@ -1,5 +1,4 @@
 
-
 from q_type import benchmark
 from npq_printer import npq_printer
 
@@ -23,11 +22,11 @@ def npq_test_and_count(M,N,P,Q):
 		return len(diagonal)+len(non_rooks), False
 	return len(diagonal)+len(non_rooks), True
 
-n = 5
+n = 4
 
-N = [1,5,2,4,3]
-P = [0,3,9,4,1]
-Q = [0,1,3,4,9]
+N = [2,1,3,4]
+P = ['a','b','c','d']
+Q = ['x','y','z','t']
 M = []
 for i in range(n):
 	M.append(i+1)

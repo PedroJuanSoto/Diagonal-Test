@@ -3,7 +3,7 @@ from q_type import diagonal_test, create_Q, benchmark
 from n_types import create_N_zig_zag, create_N_random, create_N_diagonal, create_N_zig_zag_general
 from p_types import gen_arith_prog
 from sympy import factorint 
-from npq_test import npq_test
+from npq_test import npq_test_and_count
 from npq_printer import npq_printer
 
 
@@ -50,12 +50,12 @@ def create_P_arith_prog(n):
 	D.pop()
 	return D, L
 	
-n = 12
+n = 5
 D, L = create_P_arith_prog(n)
 print(D,L)
 P = gen_arith_prog(n,0,D,L)
 print(P)
-Q = create_Q_dyn_prog(n)
+count, Q = create_Q_dyn_prog(n)
 print(Q)
 N = create_N_zig_zag_general(n)
 M = []
