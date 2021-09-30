@@ -25,8 +25,8 @@ def npq_test_and_count(M,N,P,Q):
 n = 4
 
 N = [2,1,3,4]
-P = ['a','b','c','d']
-Q = ['x','y','z','t']
+P = [' ','b+','c+','d+']
+Q = [' ','y','z','t']
 M = []
 for i in range(n):
 	M.append(i+1)

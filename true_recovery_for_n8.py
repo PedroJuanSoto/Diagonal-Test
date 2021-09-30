@@ -46,10 +46,10 @@ def true_rec(k):
 	return m	
 
 
-j=4
-for i in range(j):	
-	print("r(",i+1,",",j,") = ")
-	print(r(i+1,j))
-for i in range(j):	
-	print("r_col(",i+1,",",j,") = ")
-	print(r_col(i+1,j))
+i_values = []
+recovery_list = []
+for i in range(20):
+	i_values.append(i+3)
+	recovery_list.append(true_rec(i+3))
+print(i_values)
+print(recovery_list)
